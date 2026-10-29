@@ -4,8 +4,8 @@ from math import asin, cos, radians, sin, sqrt
 
 
 def haversine(coord1: tuple, coord2: tuple) -> float:
-    latitude1, longitude1 = map(radians, coord1);
-    latitude2, longitude2 = map(radians, coord2);
+    latitude1, longitude1 = map(radians, coord1)
+    latitude2, longitude2 = map(radians, coord2)
 
     delta_latitude = latitude2 - latitude1
     delta_longitude = longitude2 - longitude1
