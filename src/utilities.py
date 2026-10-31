@@ -70,3 +70,8 @@ def load_coordinates(path: Path = DATA_DIR / "coordinates.csv") -> dict[str, tup
     """Lê o coordinates.csv e devolve {cidade: (latitude, longitude)}."""
     df = pd.read_csv(path)
     return {normalize(row.cidade): (row.latitude, row.longitude) for row in df.itertuples()}
+
+def load_display_names(path: Path = DATA_DIR / "coordinates.csv") -> dict[str, str]:
+    """Retorna {NOME NORMALIZADO: Nome Original com Acento}."""
+    df = pd.read_csv(path, encoding="utf-8-sig")
+    return {normalize(c): str(c).strip() for c in df["cidade"]}
